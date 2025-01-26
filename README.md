@@ -1,23 +1,23 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Membaca file CSV
+### Membaca file CSV
 file_path = '/mnt/data/sp500_trends.csv'
 data = pd.read_csv(file_path)
 
-# Menampilkan 5 baris pertama data
+### Menampilkan 5 baris pertama data
 print("\nPreview dataset:")
 print(data.head())
 
-# Informasi dataset
+### Informasi dataset
 print("\nInformasi dataset:")
 data.info()
 
-# Statistik deskriptif
+### Statistik deskriptif
 print("\nStatistik deskriptif:")
 print(data.describe())
 
-# Visualisasi data (contoh: tren harga penutupan)
+### Visualisasi data (contoh: tren harga penutupan)
 if 'Date' in data.columns and 'Close' in data.columns:
     # Pastikan kolom Date diformat sebagai datetime
     data['Date'] = pd.to_datetime(data['Date'])
