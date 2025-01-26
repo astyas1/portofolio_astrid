@@ -14,11 +14,9 @@ print("\nStatistik deskriptif:")
 print(data.describe())
 
 if 'Date' in data.columns and 'Close' in data.columns:
-    # Pastikan kolom Date diformat sebagai datetime
     data['Date'] = pd.to_datetime(data['Date'])
     data.sort_values('Date', inplace=True)
 
-    # Membuat plot harga penutupan
     plt.figure(figsize=(12, 6))
     plt.plot(data['Date'], data['Close'], label='Close Price', color='blue')
     plt.title('Tren Harga Penutupan S&P 500')
